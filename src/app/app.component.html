@@ -1,0 +1,105 @@
+<div class="url-heading text-center">
+  <p class="url">URL SHORTENER</p>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card card-bg">
+        <div class="card-body">
+          <form>
+            <h2 class="text-center">Paste the URL to be shortened</h2><br>
+            
+            <div class="form-group d-flex justify-content-center">
+              <div class="input-group col-md-8">
+                <input type="text" #inputElement class="form-control" placeholder="Enter your input" [(ngModel)]="inputValue">
+
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-primary btn-square paste-btn" (click)="onPaste(inputElement)">
+                    📄
+                  </button>
+                                   
+                </div>
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-primary btn-square" (click)="onSubmit()" >
+                    Shortened URL
+                  </button>
+                     
+                </div>
+              </div>
+            </div>
+            <div class="p-3 text-center">
+              <p class="col-md-10 mx-auto">ShortURL is a free service to shorten URLs and create short links.
+              Create a premium account to shorten unlimited URLs with more features for your projects.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="shortCode">
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card card-bg">
+        <div class="card-body">
+            <div class="card">
+              <div class="card-body">
+                
+                  <div class="form-group">
+                    <label for="shortUrlInput" class="shorturl-label text-center">Shortened URL</label>
+                    <div class="input-group">
+                      <input #shortUrlInput type="text" class="form-control" [(ngModel)]="shortUrl" readonly>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary btn-square" (click)="copyInputValue(shortUrlInput)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>y
+  
+</div>
+<br><br><br><br>
+
+<style>
+  .card-bg {
+    background: #f5f5f5;
+  }
+  .input-group-text {
+  border-right: none;
+}
+.url{
+  font: 900 49px asap,arial;;
+  margin-top: 1em;
+  text-shadow: 0 2px 2px #ddd;
+  color: #006cff;
+  text-align: center;
+}
+.input-group .form-control {
+  border-left: none;
+}
+.paste-btn{
+  background: transparent;
+  border: 1px solid #CED4DA;
+}
+.shorturl-label{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center !important;
+  margin-bottom: 10px;
+}
+.input-group-prepend {
+  width: 48px;
+  border-right: none;
+} 
+  .btn-square {
+    border-radius: 0;
+    padding: 1em 2em;
+  }
+</style>
